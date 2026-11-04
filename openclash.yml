@@ -146,7 +146,7 @@ proxy-groups:
   - {name: 🎵 TikTok, type: select, proxies: [ ♻️ 美国自动, ♻️ 狮城自动, 🌐 全部节点]}
   - {name: 📲 Telegram, type: select, proxies: [ 🚀 默认代理, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, 🌐 全部节点]}
   - {name: 🎥 NETFLIX, type: select, proxies: [ 🚀 默认代理, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, 🌐 全部节点]}
-  - {name: 🍎 APPLE, type: select, proxies: [ 🚀 默认代理, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, 🌐 全部节点]}
+  - {name: 🍎 APPLE, type: select, proxies: [ 直连, 🚀 默认代理, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, 🌐 全部节点]}
   - {name: 💶 PayPal, type: select, proxies: [ 🔯 美国故转, 🚀 默认代理, ♻️ 香港自动, ♻️ 美国自动, 🌐 全部节点]}
   - {name: 🐬 OneDrive, type: select, proxies: [ 直连, 🌐 全部节点, 🚀 默认代理]}
   - {name: 🪟 Microsoft, type: select, proxies: [ 直连, 🌐 全部节点, 🚀 默认代理]}
