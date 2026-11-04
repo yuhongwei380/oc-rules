@@ -190,6 +190,7 @@ rules:
   - RULE-SET,openai,🤖 AI Services
   - RULE-SET,copilot,🤖 AI Services
   - RULE-SET,cursor,🤖 AI Services
+  - RULE-SET,anthropic,🤖 AI Services
   - RULE-SET,ai-aio,🤖 AI Services
   - RULE-SET,private_ip,直连
   - RULE-SET,private_domain,直连
@@ -225,6 +226,7 @@ rule-providers:
   direct_inc: { <<: *class, url: "https://raw.githubusercontent.com/yuhongwei380/oc-rules/main/direct.list"}
   
   # AI 规则集
+  anthropic: { <<: *class_yaml, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/anthropic.mrs"}
   copilot: { <<: *class_yaml, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/copilot.mrs"}
   openai: { <<: *class_yaml, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/openai.mrs"}
   cursor: { <<: *class_yaml, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cursor.mrs"}
