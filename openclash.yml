@@ -146,6 +146,7 @@ proxy-groups:
   - {name: 🎵 TikTok, type: select, proxies: [ ♻️ 美国自动, ♻️ 狮城自动, 🌐 全部节点]}
   - {name: 📲 Telegram, type: select, proxies: [ 🚀 默认代理, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, 🌐 全部节点]}
   - {name: 🎥 NETFLIX, type: select, proxies: [ 🚀 默认代理, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, 🌐 全部节点]}
+  - {name: 🍎 APPLE, type: select, proxies: [ 🚀 默认代理, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, 🌐 全部节点]}
   - {name: 💶 PayPal, type: select, proxies: [ 🔯 美国故转, 🚀 默认代理, ♻️ 香港自动, ♻️ 美国自动, 🌐 全部节点]}
   - {name: 🐬 OneDrive, type: select, proxies: [ 直连, 🌐 全部节点, 🚀 默认代理]}
   - {name: 🪟 Microsoft, type: select, proxies: [ 直连, 🌐 全部节点, 🚀 默认代理]}
@@ -161,12 +162,12 @@ proxy-groups:
   - {name: 🔯 美国故转AI, type: fallback, url: http://cp.cloudflare.com/generate_204, interval: 30, timeout: 800, lazy: false, proxies: [ 🇺🇲 美国节点AI, ♻️ 美国自动AI, 🇺🇲 美国节点, ♻️ 美国自动]}
   
   # Url-Test 自动测速组
-  - {name: ♻️ 香港自动, type: url-test, url: http://cp.cloudflare.com/generate_204, client-fingerprint: chrome, interval: 60, timeout: 1000, max-failed-times: 3, tolerance: 50, include-all: true, filter: "(?i)^(?=.*(港|HK|Hong))(?!(.*(台|日|韩|新|美))).*$"}
-  - {name: ♻️ 日本自动, type: url-test, url: http://cp.cloudflare.com/generate_204, client-fingerprint: chrome, interval: 60, timeout: 1000, max-failed-times: 3, tolerance: 50, include-all: true, filter: "(?=.*(日|JP|(?i)Japan|c22s4))^((?!(us|港|台|韩|新|美)).)*$"}
-  - {name: ♻️ 狮城自动, type: url-test, url: http://cp.cloudflare.com/generate_204, client-fingerprint: chrome, interval: 60, timeout: 1000, max-failed-times: 3, tolerance: 50, include-all: true, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$"}
-  - {name: ♻️ 美国自动, type: url-test, url: http://cp.cloudflare.com/generate_204, client-fingerprint: chrome, interval: 60, timeout: 1000, max-failed-times: 3, tolerance: 50, include-all: true, filter: "(?=.*(US|us|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
-  - {name: ♻️ 美国自动AI, type: url-test, url: http://cp.cloudflare.com/generate_204, client-fingerprint: chrome, interval: 60, timeout: 1000, max-failed-times: 3, tolerance: 50, include-all: true, filter: "(?=.*(US|us|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
-  - {name: ♻️ 美国自动-机场, type: url-test, url: http://cp.cloudflare.com/generate_204, client-fingerprint: chrome, interval: 60, timeout: 1000, max-failed-times: 3, tolerance: 50, include-all: true, filter: "(?=.*(美|c22s2|c22s3|(?i)States|America))^((?!(港|台|日|韩|新|us-vps)).)*$"}
+  - {name: ♻️ 香港自动, type: url-test, url: http://cp.cloudflare.com/generate_204, client-fingerprint: chrome, interval: 30, timeout: 1000, max-failed-times: 3, tolerance: 50, include-all: true, filter: "(?i)^(?=.*(港|HK|Hong))(?!(.*(台|日|韩|新|美))).*$"}
+  - {name: ♻️ 日本自动, type: url-test, url: http://cp.cloudflare.com/generate_204, client-fingerprint: chrome, interval: 30, timeout: 1000, max-failed-times: 3, tolerance: 50, include-all: true, filter: "(?=.*(日|JP|(?i)Japan|c22s4))^((?!(us|港|台|韩|新|美)).)*$"}
+  - {name: ♻️ 狮城自动, type: url-test, url: http://cp.cloudflare.com/generate_204, client-fingerprint: chrome, interval: 30, timeout: 1000, max-failed-times: 3, tolerance: 50, include-all: true, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$"}
+  - {name: ♻️ 美国自动, type: url-test, url: http://cp.cloudflare.com/generate_204, client-fingerprint: chrome, interval: 30, timeout: 1000, max-failed-times: 3, tolerance: 50, include-all: true, filter: "(?=.*(US|us|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
+  - {name: ♻️ 美国自动AI, type: url-test, url: http://cp.cloudflare.com/generate_204, client-fingerprint: chrome, interval: 30, timeout: 1000, max-failed-times: 3, tolerance: 50, include-all: true, filter: "(?=.*(US|us|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
+  - {name: ♻️ 美国自动-机场, type: url-test, url: http://cp.cloudflare.com/generate_204, client-fingerprint: chrome, interval: 30, timeout: 1000, max-failed-times: 3, tolerance: 50, include-all: true, filter: "(?=.*(美|c22s2|c22s3|(?i)States|America))^((?!(港|台|日|韩|新|us-vps)).)*$"}
   
   # 手动选择组
   - {name: 🇭🇰 香港节点, type: select, client-fingerprint: chrome, include-all: true, filter: "(?i)港|hk|hongkong|hong kong"}
@@ -196,7 +197,7 @@ rules:
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,onedrive_domain,🐬 OneDrive
   - RULE-SET,microsoft_domain,🪟 Microsoft
-  - RULE-SET,apple_domain,直连
+  - RULE-SET,apple_domain,🍎 APPLE
   - RULE-SET,tiktok_domain,🎵 TikTok
   - RULE-SET,telegram_domain,📲 Telegram
   - RULE-SET,netflix_domain,🎥 NETFLIX
