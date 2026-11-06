@@ -23,6 +23,7 @@ DST-PORT,5349,DIRECT
 
 
 #custom-domain
+DOMAIN-SUFFIX,persistent.oaistatic.com
 DOMAIN-SUFFIX,kaspersky.com
 DOMAIN-SUFFIX,epicgames.dev
 DOMAIN-SUFFIX,khivpn.nayapay.com
