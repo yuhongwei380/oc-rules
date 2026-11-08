@@ -103,7 +103,7 @@ dns:
     - "+.msftncsi.com"
     - "time.*.com"
     - "+.market.xiaomi.com"
-  default-nameserver:
+  default-nameserver:、
     - 223.5.5.5
     - 119.29.29.29
   proxy-server-nameserver:
@@ -113,6 +113,8 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
   fallback:
+    - https://8.8.4.4/dns-query
+    - https://1.1.1.1/dns-query
     - tls://8.8.4.4
     - tls://1.1.1.1
   fallback-filter:
