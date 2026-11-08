@@ -148,6 +148,7 @@ proxy-groups:
   - {name: 🎥 NETFLIX, type: select, proxies: [ 🚀 默认代理, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, 🌐 全部节点]}
   - {name: 🍎 APPLE, type: select, proxies: [ 直连, 🚀 默认代理, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, 🌐 全部节点]}
   - {name: 💶 PayPal, type: select, proxies: [ 🔯 美国故转, 🚀 默认代理, ♻️ 香港自动, ♻️ 美国自动, 🌐 全部节点]}
+  - {name: 𝕏 Twitter, type: select, proxies: [ 🚀 默认代理, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, 🌐 全部节点]}
   - {name: 🐬 OneDrive, type: select, proxies: [ 直连, 🌐 全部节点, 🚀 默认代理]}
   - {name: 🪟 Microsoft, type: select, proxies: [ 直连, 🌐 全部节点, 🚀 默认代理]}
   - {name: 🐟 漏网之鱼, type: select, proxies: [ 直连, 🚀 默认代理, 🌐 全部节点]}
@@ -202,6 +203,7 @@ rules:
   - RULE-SET,tiktok_domain,🎵 TikTok
   - RULE-SET,telegram_domain,📲 Telegram
   - RULE-SET,netflix_domain,🎥 NETFLIX
+  - RULE-SET,twitter_domain,𝕏 Twitter
   - RULE-SET,paypal_domain,💶 PayPal
   - RULE-SET,apple_ip,直连,no-resolve
   - RULE-SET,google_ip,🍀 Google & Gemini,no-resolve
@@ -236,6 +238,7 @@ rule-providers:
   google_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
   google_gemini_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-gemini.mrs"}
   # 常用服务规则集
+  twitter_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geo/geoip/twitter.mrs"}
   youtube_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   github_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
   telegram_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
