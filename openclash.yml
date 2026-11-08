@@ -8,7 +8,7 @@ proxy-providers:
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
-      interval: 60
+      interval: 30
     proxy: 直连
 
   bywave2:
@@ -18,7 +18,7 @@ proxy-providers:
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
-      interval: 60
+      interval: 30
     proxy: 🚀 默认代理
 
 # 节点信息
@@ -49,17 +49,14 @@ geo-auto-update: true
 geo-update-interval: 24
 geodata-mode: true
 geox-url:
-  geosite: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
   geoip:   https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
-  mmdb:    https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.metadb
-  asn:     https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb
 
 # Zashboard 控制面板配置
 external-controller: 0.0.0.0:9090
 external-ui: "/usr/share/openclash/ui"
 external-ui-name: zashboard
 #external-ui-url: "https://github.com/Zephyruso/zashboard/releases/download/v3.15.0/dist-misans-only.zip"
-secret: OpenClash
+secret: OpenClash.2026&
 
 # 嗅探
 sniffer:
@@ -98,25 +95,26 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
-    - "rule-set:private_domain,cn_domain"
+    - "rule-set:private_domain"
+    - "rule-set:cn_domain"
     - "+.msftconnecttest.com"
     - "+.msftncsi.com"
     - "time.*.com"
     - "+.market.xiaomi.com"
-  default-nameserver:、
+  default-nameserver:  
+  #负责 DNS 服务器的域名解析
     - 223.5.5.5
     - 119.29.29.29
   proxy-server-nameserver:
     - 223.5.5.5
     - 119.29.29.29
-  nameserver:
+  nameserver:  
+  #普通域名解析
     - 223.5.5.5
     - 119.29.29.29
   fallback:
     - https://8.8.4.4/dns-query
     - https://1.1.1.1/dns-query
-    - tls://8.8.4.4
-    - tls://1.1.1.1
   fallback-filter:
     geoip: true
     geoip-code: CN
@@ -183,6 +181,7 @@ proxy-groups:
 # 规则匹配
 rules:
   - RULE-SET,direct_inc,DIRECT
+
   - RULE-SET,us_proxy_inc,🗽 US-Proxy
   - RULE-SET,proxy_inc, 🏢 Company
   
@@ -214,6 +213,7 @@ rules:
   - RULE-SET,geolocation-!cn,🚀 默认代理
   - RULE-SET,cn_domain,直连
   - RULE-SET,cn_ip,直连
+  - GEOIP,CN,DIRECT,no-resolve
   - MATCH,🐟 漏网之鱼
 
 # 规则集定义
@@ -230,17 +230,17 @@ rule-providers:
   direct_inc: { <<: *class, url: "https://raw.githubusercontent.com/yuhongwei380/oc-rules/main/direct.list"}
   
   # AI 规则集
-  anthropic: { <<: *class_yaml, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/anthropic.mrs"}
-  copilot: { <<: *class_yaml, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/copilot.mrs"}
-  openai: { <<: *class_yaml, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/openai.mrs"}
-  cursor: { <<: *class_yaml, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cursor.mrs"}
+  anthropic: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/anthropic.mrs"}
+  copilot: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github-copilot.mrs"}
+  openai: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/openai.mrs"}
+  cursor: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cursor.mrs"}
   ai-aio: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-!cn.mrs" }
 
   #Google & Gemini 规则集
   google_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
   google_gemini_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-gemini.mrs"}
   # 常用服务规则集
-  twitter_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geo/geoip/twitter.mrs"}
+  twitter_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.mrs" }
   youtube_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   github_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
   telegram_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
